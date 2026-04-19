@@ -1,0 +1,12 @@
+---
+- name: Create new admin user
+  hosts: cisco
+  gather_facts: no
+
+  tasks:
+    - name: Add user
+      cisco.ios.ios_user:
+        name: ansible_user
+        configured_password: ansible123
+        privilege: 15
+        state: present

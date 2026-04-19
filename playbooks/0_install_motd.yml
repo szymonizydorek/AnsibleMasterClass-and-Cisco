@@ -1,0 +1,11 @@
+--- 
+- name: Deploy static MOTD
+  hosts: all
+  tasks:
+    - name: Copy MOTD file
+      copy:
+        src: motd
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: '0644'

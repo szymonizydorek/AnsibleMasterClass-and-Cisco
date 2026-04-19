@@ -1,0 +1,18 @@
+---
+- name: Show version
+  hosts: cisco
+  
+  tasks:
+    - name: Collect Operation items from '{{ ansible_network_os }}'
+      ios_command:
+        commands: 
+            - show inventory 
+            - show ip interface brief
+      register: show_output
+
+    - name: Show results
+      debug:
+        msg: "{{ show_output.stdout }}"
+     
+
+  

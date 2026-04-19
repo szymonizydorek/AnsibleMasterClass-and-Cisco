@@ -1,0 +1,15 @@
+---
+- name: Configure login banner
+  hosts: cisco
+  gather_facts: no
+
+  tasks:
+    - name: Set login banner
+      cisco.ios.ios_banner:
+        banner: login
+        text: |
+          *********************************
+          UNAUTHORIZED ACCESS PROHIBITED
+          Managed by Ansible
+          *********************************
+        state: present

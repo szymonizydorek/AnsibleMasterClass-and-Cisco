@@ -1,0 +1,11 @@
+---
+- name: Setting up hostnames
+  hosts: router1
+  gather_facts: no
+
+  tasks:
+    - name: Apply the provided configuration
+      cisco.ios.ios_hostname:
+        config:
+          hostname: cph1-router-becomedev
+        state: merged

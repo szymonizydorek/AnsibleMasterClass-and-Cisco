@@ -1,0 +1,21 @@
+all:
+  children:
+    webservers:
+      hosts:
+        Web01-Ubuntu:
+          ansible_host: 172.31.44.200
+          ansible_user: ubuntu
+          ansible_ssh_private_key_file: /home/ubuntu/AnsibleMasterClass/keys/key 
+          ansible_python_interpreter: /usr/bin/python3
+        Web02-Ubuntu:
+          ansible_host: 172.31.46.210
+          ansible_user: ubuntu
+          ansible_ssh_private_key_file: /home/ubuntu/AnsibleMasterClass/keys/key 
+          ansible_python_interpreter: /usr/bin/python3
+    database:
+      hosts:
+        Web03-CentOS:
+          ansible_host: 172.31.20.215
+          ansible_user: ec2-user
+          ansible_ssh_private_key_file: /home/ubuntu/AnsibleMasterClass/keys/key
+          ansible_python_interpreter: /usr/bin/python3 

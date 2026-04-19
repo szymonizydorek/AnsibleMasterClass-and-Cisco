@@ -1,0 +1,16 @@
+---
+- name: Webserver Setup
+  hosts: webservers
+  tasks:
+    - name: Uninstall NGINX
+      apt:
+        name: nginx
+        state: absent
+
+- name: Database Setup
+  hosts: database
+  tasks:
+    - name: Uninstall Maria
+      yum:
+        name: mariadb-server
+        state: absent 
